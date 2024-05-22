@@ -22,12 +22,17 @@
       <h2>Pick your favourite taco ingredient 👆</h2>
     <%}
     else{%>
+      <h2 id="recipeTitle"><%=recipe.name%></h2>
       <h3>Ingredients:</h3>
       <ul id="ingredientsList">
+        <li><%= recipe.ingredients.protein.name %>, <%= recipe.ingredients.protein.preparation %></li>
+        <li><%= recipe.ingredients.salsa.name %></li>
+        <% recipe.ingredients.toppings.forEach(topping => {%>
+          <li>
+            <%= topping.quantity %> of <%= topping.name %>
+          </li>
         
-      <li><%=recipe%></li>
-      <li>Salsa name</li>
-      <li>Every other topping</li>
+        <%});%>
     </ul>
     <%}%>
     
